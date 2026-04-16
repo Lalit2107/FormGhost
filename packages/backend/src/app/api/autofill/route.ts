@@ -6,7 +6,7 @@ import { z } from 'zod';
 
 const autofillRequestSchema = z.object({
   fields: z.array(z.any()), // Array of DetectedField
-  decryptedProfileData: z.record(z.any()), // Client decrypts and sends over TLS
+  decryptedProfileData: z.record(z.string(), z.any()), // Client decrypts and sends over TLS
   domain: z.string().min(1)
 });
 
